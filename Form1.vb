@@ -1,0 +1,169 @@
+﻿Public Class Form1
+    Dim işaret As String
+    Dim sayı1, sayı2, sonuç, modsonuç As Double
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "1"
+        Else
+            TextBox1.Text = TextBox1.Text + "1"
+        End If
+    End Sub
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "2"
+        Else
+            TextBox1.Text = TextBox1.Text + "2"
+        End If
+    End Sub
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "3"
+        Else
+            TextBox1.Text = TextBox1.Text + "3"
+        End If
+    End Sub
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "4"
+        Else
+            TextBox1.Text = TextBox1.Text + "4"
+        End If
+    End Sub
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "5"
+        Else
+            TextBox1.Text = TextBox1.Text + "5"
+        End If
+    End Sub
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "6"
+        Else
+            TextBox1.Text = TextBox1.Text + "6"
+        End If
+    End Sub
+    Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "7"
+        Else
+            TextBox1.Text = TextBox1.Text + "7"
+        End If
+    End Sub
+    Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "8"
+        Else
+            TextBox1.Text = TextBox1.Text + "8"
+        End If
+    End Sub
+    Private Sub Button9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button9.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "9"
+        Else
+            TextBox1.Text = TextBox1.Text + "9"
+        End If
+    End Sub
+    Private Sub Button10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button10.Click
+        If TextBox1.Text = "0" Then
+            TextBox1.Text = "0"
+        Else
+            TextBox1.Text = TextBox1.Text + "0"
+        End If
+    End Sub
+
+    Private Sub Button13_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button13.Click
+        işaret = "artı"
+        sayı1 = TextBox1.Text
+        Label1.Text = sayı1 & " + "
+        TextBox1.Text = ""
+
+        ' Butonları gizledik...
+        Button12.Enabled = True
+        Button13.Enabled = False
+        Button14.Enabled = False
+        Button15.Enabled = False
+        Button16.Enabled = False
+
+    End Sub
+
+    Private Sub Button14_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button14.Click
+        işaret = "eksi"
+        sayı1 = TextBox1.Text
+        Label1.Text = sayı1 & " - "
+        TextBox1.Text = ""
+        ' Butonları gizledik...
+        Button12.Enabled = True
+        Button13.Enabled = False
+        Button14.Enabled = False
+        Button15.Enabled = False
+        Button16.Enabled = False
+    End Sub
+
+    Private Sub Button15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button15.Click
+        işaret = "çarpı"
+        sayı1 = TextBox1.Text
+        Label1.Text = sayı1 & " x "
+        TextBox1.Text = ""
+        ' Butonları gizledik...
+        Button12.Enabled = True
+        Button13.Enabled = False
+        Button14.Enabled = False
+        Button15.Enabled = False
+        Button16.Enabled = False
+    End Sub
+
+    Private Sub Button16_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button16.Click
+        işaret = "bölme"
+        sayı1 = TextBox1.Text
+        Label1.Text = sayı1 & " / "
+        TextBox1.Text = ""
+        ' Butonları gizledik...
+        Button12.Enabled = True
+        Button13.Enabled = False
+        Button14.Enabled = False
+        Button15.Enabled = False
+        Button16.Enabled = False
+    End Sub
+
+    Private Sub Button12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button12.Click
+        sayı2 = TextBox1.Text
+
+        Button12.Enabled = False
+
+        ' Butonları aktif ettik...
+
+        Button13.Enabled = True
+        Button14.Enabled = True
+        Button15.Enabled = True
+        Button16.Enabled = True
+        If işaret = "artı" Then
+            sonuç = sayı1 + sayı2
+            Label1.Text = sayı1 & " + " & sayı2 & " = " & sonuç
+            TextBox1.Text = ""
+        ElseIf işaret = "eksi" Then
+            sonuç = sayı1 - sayı2
+            Label1.Text = sayı1 & " - " & sayı2 & " = " & sonuç
+            TextBox1.Text = ""
+        ElseIf işaret = "çarpı" Then
+            sonuç = sayı1 * sayı2
+            Label1.Text = sayı1 & " x " & sayı2 & " = " & sonuç
+            TextBox1.Text = ""
+        ElseIf işaret = "bölme" Then
+            sonuç = sayı1 / sayı2
+            modsonuç = sayı1 Mod sayı2
+            Label1.Text = sayı1 & " / " & sayı2 & " = " & sonuç & vbNewLine & "Kalan :" & modsonuç
+            TextBox1.Text = ""
+        End If
+    End Sub
+
+    Private Sub Button11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button11.Click
+        TextBox1.Text = ""
+        işaret = ""
+        Label1.Text = ""
+        Button12.Enabled = True
+        sayı1 = 0
+        sayı1 = 0
+        modsonuç = 0
+    End Sub
+End Class
